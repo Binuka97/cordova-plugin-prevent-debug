@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cordova-plugin-security"
+        id="cordova-plugin-prevent-debug"
         version="1.0.0">
 
     <name>SecurityCheck</name>

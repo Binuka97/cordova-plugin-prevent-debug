@@ -1,9 +1,9 @@
 {
-    "name": "cordova-plugin-securitycheck",
+    "name": "cordova-plugin-prevent-debug",
     "version": "1.0.0",
     "description": "A Cordova plugin to check if Developer Options, USB Debugging, and Debugger are enabled on Android and iOS.",
     "cordova": {
-      "id": "cordova-plugin-securitycheck",
+      "id": "cordova-plugin-prevent-debug",
       "platforms": ["android", "ios"]
     },
     "repository": {
