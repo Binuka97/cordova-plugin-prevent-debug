@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-security"
+        version="1.0.0">
+
+    <name>SecurityCheck</name>
+    <description>Detect Developer Options, Debugging, USB Debugging, and Anti-Hooking</description>
+    <license>MIT</license>
+
+    <platform name="android">
+        <js-module src="www/securitycheck.js" name="SecurityCheck">
+            <clobbers target="SecurityCheck"/>
+        </js-module>
+        <source-file src="src/android/SecurityCheck.java" target-dir="src/com/plugin/security"/>
+        <source-file src="src/android/AntiHooking.java" target-dir="src/com/plugin/security"/>
+    </platform>
+
+    <platform name="ios">
+        <js-module src="www/securitycheck.js" name="SecurityCheck">
+            <clobbers target="SecurityCheck"/>
+        </js-module>
+        <source-file src="src/ios/SecurityCheck.m" />
+    </platform>
+</plugin>

@@ -1,0 +1,33 @@
+{
+    "name": "cordova-plugin-securitycheck",
+    "version": "1.0.0",
+    "description": "A Cordova plugin to check if Developer Options, USB Debugging, and Debugger are enabled on Android and iOS.",
+    "cordova": {
+      "id": "cordova-plugin-securitycheck",
+      "platforms": ["android", "ios"]
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/your-repo/cordova-plugin-securitycheck"
+    },
+    "keywords": [
+      "cordova",
+      "security",
+      "debugger detection",
+      "developer options",
+      "usb debugging"
+    ],
+    "author": "Your Name",
+    "license": "MIT",
+    "engines": [
+      {
+        "name": "cordova",
+        "version": ">=10.0.0"
+      }
+    ],
+    "bugs": {
+      "url": "https://github.com/your-repo/cordova-plugin-securitycheck/issues"
+    },
+    "homepage": "https://github.com/your-repo/cordova-plugin-securitycheck#readme"
+  }
+  
