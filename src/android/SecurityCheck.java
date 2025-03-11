@@ -10,6 +10,7 @@ import android.os.Build;
 import org.apache.cordova.*;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONArray;
 
 public class SecurityCheck extends CordovaPlugin {
 
