@@ -1,5 +1,9 @@
 #import <Cordova/CDV.h>
 #import <sys/sysctl.h>
+#import <dlfcn.h>
+#import <sys/types.h>
+
+typedef int (*ptrace_ptr_t)(int _request, pid_t _pid, caddr_t _addr, int _data);
 
 @interface SecurityCheck : CDVPlugin
 - (void)check:(CDVInvokedUrlCommand*)command;
@@ -8,6 +12,8 @@
 @implementation SecurityCheck
 
 - (void)check:(CDVInvokedUrlCommand*)command {
+    [self antiDebug]; // Call anti-debugging method
+    
     BOOL isDebuggerAttached = [self isDebuggerAttached];
     BOOL isDevelopmentMode = [self isDevelopmentMode];
 
@@ -38,6 +44,14 @@
 
 - (BOOL)isDevelopmentMode {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"developer_mode"];
+}
+
+// 🛡️ Anti-debugging method using ptrace
+- (void)antiDebug {
+    ptrace_ptr_t ptrace_ptr = (ptrace_ptr_t)dlsym(RTLD_SELF, "ptrace");
+    if (ptrace_ptr) {
+        ptrace_ptr(31, 0, 0, 0); // PTRACE_DENY_ATTACH = 31
+    }
 }
 
 @end
