@@ -47,7 +47,7 @@ public class SecurityCheck extends CordovaPlugin {
     private boolean isDeveloperOptionsEnabled(Activity activity) {
         try {
             int devOptions;
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) { // Android 13+
+            if (Build.VERSION.SDK_INT >= 33) { // Android 13+
                 devOptions = Settings.Secure.getInt(activity.getContentResolver(), Settings.Secure.DEVELOPMENT_SETTINGS_ENABLED, 0);
             } else {
                 devOptions = Settings.Global.getInt(activity.getContentResolver(), Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0);
